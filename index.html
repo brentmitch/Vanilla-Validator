@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla Validate Example</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Vanilla Validate Form Validator Example</h1>
+    </header>
+    <main>
+      <form id="exampleForm" class="example-form" novalidate>
+        <div class="form-status">
+          Form Status: <span class="form-has-errors">has error(s)</span>
+        </div>
+        <!-- Name-->
+        <div class="input-group">
+          <label for="inputName">Name <span class="required">*</span></label>
+          <input
+            id="inputName"
+            class="form-control"
+            type="text"
+            data-validate-type="charactersOnly"
+            required
+            data-validate
+          />
+          <div class="error-message" data-validate-message></div>
+        </div>
+
+        <!-- Address Line 1-->
+        <div class="input-group">
+          <label for="inputAddressLine1"
+            >Address <span class="required">*</span></label
+          >
+          <input
+            id="inputAddress1"
+            class="form-control"
+            type="text"
+            required
+            data-validate
+          />
+          <div class="error-message" data-validate-message></div>
+        </div>
+
+        <!-- Address Line 2-->
+        <div class="input-group">
+          <label for="inputAddressLine2">Address Line 2</label>
+          <input id="inputAddressLine2" class="form-control" type="text" />
+        </div>
+
+        <!-- Transaction Amount-->
+        <div class="input-group">
+          <label for="transactionAmount"
+            >Transaction Amount <span class="required">*</span></label
+          >
+          <input
+            id="transactionAmount"
+            class="form-control"
+            data-validate
+            data-validate-type="transactionAmount"
+            type="text"
+          />
+          <div class="error-message" data-validate-message></div>
+        </div>
+
+        <!-- Email-->
+        <div class="input-group">
+          <label for="inputEmail">Email</label>
+          <input
+            id="inputEmail"
+            class="form-control"
+            type="email"
+            data-validate
+          />
+          <div class="error-message" data-validate-message></div>
+        </div>
+
+        <!--Favorite Number-->
+        <div class="input-group">
+          <label for="favoriteNumber">Favorite Number</label>
+          <select
+            class="form-select"
+            aria-label="Default select favorit number"
+            data-validate
+            required
+          >
+            <option value="" selected>Select a number...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <div class="error-message" data-validate-message></div>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="inputPassword" />
+          <div class="error-message" data-validate-message></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+      </form>
+    </main>
+    <footer></footer>
+    <script src="./script/script.js" type="module"></script>
+  </body>
+</html>
